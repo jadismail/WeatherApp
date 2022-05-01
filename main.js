@@ -1,7 +1,7 @@
 const api = {
     key: "7591cf9fedca283a92468b5fd43c073d",
     baseUrl: "https://api.openweathermap.org/data/2.5/",
-}
+};
 
 const searchBox = document.querySelector(".search");
 
@@ -29,13 +29,13 @@ function displayResult(weather) {
     date.innerHTML = dateBuilder(today);
 
     const tempElement = document.querySelector(".temp");
-    tempElement.innerHTML = `${Math.round(weather.main.temp)}°C`
+    tempElement.innerHTML = `${Math.round(weather.main.temp)}°C`;
 
     const weatherElement = document.querySelector(".weather");
-    weatherElement.innerHTML = `${weather.weather[0].main}`
+    weatherElement.innerHTML = `${weather.weather[0].main}`;
 
     const levelElement = document.querySelector(".level");
-    levelElement.innerHTML = `${Math.round(weather.main.temp_min)}°C / ${Math.round(weather.main.temp_max)}°C`
+    levelElement.innerHTML = `${Math.round(weather.main.temp_min)}°C / ${Math.round(weather.main.temp_max)}°C`;
 
     const weatherIconElement = document.querySelector(".weather-icon");
     weatherIconElement.innerHTML = getWeatherIcon(weather.weather[0].description);
@@ -61,19 +61,19 @@ function getWeatherIcon(weatherEl) {
     switch (weatherEl) {
         case "overcast clouds":
             return `<i class="fa-solid fa-cloud-sun fa-4x"></i>`;
-            break;
+
         case "clear sky":
             return `<i class="fa-solid fa-sun fa-4x" style="color: yellow;"></i>`;
-            break;
+
         case "broken clouds":
             return `<i class="fa-solid fa-cloud fa-4x"></i>`;
-            break;
+
         case "scattered clouds":
             return `<i class="fa-solid fa-cloud fa-4x"></i>`;
-            break;
+
         case "few clouds":
             return `<i class="fa-solid fa-cloud fa-4x"></i>`;
-            break;
+
             // default:
             //     break;
     }
